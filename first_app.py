@@ -7,7 +7,8 @@ import pandas as pd
 
 author_name = 'Oumar KEITA'
 # Application dash
-app = dash.Dash()
+app = dash.Dash(__name__)
+server = app.server
 
 data = pd.read_csv('/Users/mac/Documents/My_Dashboard/bank.csv')
 job_proportion = data['job'].value_counts(normalize = True).sort_values(ascending = False)*100
@@ -140,4 +141,4 @@ def update_housing(selection) :
 
 
 if __name__ == '__main__' :
-    app.run_server(debug = True)
+    app.run_server(debug = False)
