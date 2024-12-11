@@ -9,6 +9,7 @@ import numpy as np
 author_name = 'Oumar KEITA'
 # Application dash
 app = dash.Dash(__name__)
+server = app.server
 
 data = pd.read_csv('https://github.com/Oumarkei/Dash_App_deployement/blob/main/My_Dashboard/bank.csv')
 job_proportion = data['job'].value_counts(normalize = True).sort_values(ascending = False)*100
