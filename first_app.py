@@ -10,7 +10,7 @@ author_name = 'Oumar KEITA'
 app = dash.Dash(__name__)
 server = app.server
 
-data = pd.read_csv('/Users/mac/Documents/My_Dashboard/bank.csv')
+data = pd.read_csv('https://github.com/Oumarkei/Dash_App_deployement/blob/main/bank.csv')
 job_proportion = data['job'].value_counts(normalize = True).sort_values(ascending = False)*100
 refusal_rate_per_job_cat = data[data['deposit'] == 'no']['job'].value_counts(normalize = True)*100
 refusal_per_month = data[data['deposit'] == 'no']['month'].value_counts(normalize = True)*100
